@@ -63,7 +63,7 @@ let newPlant = 100;
 let weekn = 10;
 let newGrowth = newPlant * 2 ** (weekn - 1);
 
-let areaNeeded = minSpace * newGrowth;
+let areaNeeded = newPlant * minSpace * newGrowth;
 
 
 
@@ -106,7 +106,6 @@ catch (error) {
     console.log(error);
 
 }
-
 
 
 
