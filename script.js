@@ -3,24 +3,31 @@
 // Here is the information you have been given:
 // The area in which the plants are contained is circular, with a radius of 5 meters.
 let radius = 5;
+
 // The formula for calculating the area of a circle is PI multiplied by the radius, squared:
 // const PI = 3.1415;
 const PI = 3.1415;
+
 // const area = PI * radius * radius;
 const area = PI * radius ** 2;
+
 // Each plant requires a minimum space of 0.8 square meters.
 let minSpace = 0.8;
+
 // The area is starting with 20 plants.
 let iniPlant = 20;
+
+
 // The plants double in number every week.
 
 // Using this information, your objectives are to:
 // Predict the plant growth after a specific number of weeks.
+
 let n = 2; //n is number of weeks
 let growth = iniPlant * 2 ** (n - 1); // Plant growth after n-1 number of weeks because doubling starts from 2nd week
-let spaceTaken = growth * minSpace;
+let spaceTaken = growth * minSpace; //area needed after growth
 
-console.log(`Radius: `, radius, `Area: `, area, `Number of weeks: `, n, `Number of plants: `, growth, `Total space taken: `, spaceTaken);
+//console.log(`Radius: `, radius, `Area: `, area, `Number of weeks: `, n, `Number of plants: `, growth, `Total space taken: `, spaceTaken);
 
 // Implement control flow to make decisions on whether the plants should be:
 // Pruned, to stop them from exceeding the capacity of the garden.
@@ -49,8 +56,10 @@ else {
 
 // Within your submission, include the results for 1, 2, and 3 weeks of growth as inputs.
 
-
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 //change the number of weeks accordingly at line 19 variable n.
+
+
 
 
 
@@ -59,27 +68,36 @@ else {
 
 // The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks.
 
+
 let newPlant = 100; //new initial number of plants needed
 let weekn = 10; // number of weeks plants not pruned
 let newGrowth = newPlant * 2 ** (weekn - 1); //plant growth after weekn number of weeks
 
-let areaNeeded = minSpace * newGrowth; //area needed after weekn
-
 let newIniAreaNeeded = minSpace * newPlant; //initial area needed to plant
+
+let areaNeeded = minSpace * newGrowth; //area needed after weekn if started with 100 plants
 
 console.log(`Total area needed if scientists started with 100 plants with no pruning for 10 weeks:`, areaNeeded);
 
-let addAreaNeeded = areaNeeded - area;
 
-console.log(newPlant, weekn, newGrowth);
+let addAreaNeeded = areaNeeded - area; //additonal area needed for the growth of 100 plants after 10 weeks
+
+//console.log(newPlant, weekn, newGrowth);
 
 console.log(`Additional area needed:`, addAreaNeeded);
 
 // If the space remained circular, what would be the radius of this expanded garden?
 
-let newRadius = Math.sqrt(areaNeeded / PI);
+let newIniRadius = Math.sqrt(newIniAreaNeeded/PI); //Radius calculated for new area needed to plant 100 plants
 
-console.log(`Radius of expanded garden:`, newRadius);
+console.log(`Radius of expanded garden needed for 100 plants:`, newIniRadius);
+
+
+let newRadius = Math.sqrt(areaNeeded / PI);    //Radius calculated for new area needed for the growth of 100 plants after 10 weeks
+
+console.log(`Radius of expanded garden after 10 weeks of no pruning:`, newRadius);
+
+
 
 
 
