@@ -59,13 +59,13 @@ else {
 
 // The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks.
 
-let newPlant = 100;
-let weekn = 10;
-let newGrowth = newPlant * 2 ** (weekn - 1);
+let newPlant = 100; //new initial number of plants needed
+let weekn = 10; // number of weeks plants not pruned
+let newGrowth = newPlant * 2 ** (weekn - 1); //plant growth after weekn number of weeks
 
-let areaNeeded = newPlant * minSpace * newGrowth;
+let areaNeeded = minSpace * newGrowth; //area needed after weekn
 
-
+let newIniAreaNeeded = minSpace * newPlant; //initial area needed to plant
 
 console.log(`Total area needed if scientists started with 100 plants with no pruning for 10 weeks:`, areaNeeded);
 
@@ -91,7 +91,7 @@ console.log(`Radius of expanded garden:`, newRadius);
 
 try {
 
-    if (areaNeeded <= area) {
+    if (newIniAreaNeeded <= area) {
         console.log(`You can start with 100 plants in 5 m radius garden.`);
     }
 
