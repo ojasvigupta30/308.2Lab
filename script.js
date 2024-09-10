@@ -88,7 +88,7 @@ console.log(`Additional area needed:`, addAreaNeeded);
 
 // If the space remained circular, what would be the radius of this expanded garden?
 
-let newIniRadius = Math.sqrt(newIniAreaNeeded/PI); //Radius calculated for new area needed to plant 100 plants
+let newIniRadius = Math.sqrt(newIniAreaNeeded / PI); //Radius calculated for new area needed to plant 100 plants
 
 console.log(`Radius of expanded garden needed for 100 plants:`, newIniRadius);
 
@@ -109,7 +109,7 @@ console.log(`Radius of expanded garden after 10 weeks of no pruning:`, newRadius
 
 try {
 
-    if (newIniAreaNeeded <= area) {
+    if (newIniAreaNeeded < area) {
         console.log(`You can start with 100 plants in 5 m radius garden.`);
     }
 
